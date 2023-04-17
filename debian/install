@@ -1,0 +1,3 @@
+sgml-catalog-check.pl usr/share/sgml-data
+sgml/*                usr/share/sgml
+xml/*                 usr/share/xml

@@ -1,4 +1,61 @@
 #!/usr/bin/make -f
+# uncomment to enable verbose mode for debhelper
+#DH_VERBOSE = 1
+# uncomment to exclude VCS paths
+DH_ALWAYS_EXCLUDE=CVS:.svn:.git
 
 %:
 	dh $@
+
+#######################################################################
+# Some bytes in this file may have been touched by Ian Jackson,
+# so I can never remove his name from this file.  Oh boy.
+# But modernized for easier maint.
+
+#######################################################################
+# directory abstraction
+prefix		:= debian/sgml-data
+sgmldir		:= $(prefix)/usr/share/sgml
+xmldir		:= $(prefix)/usr/share/xml
+
+#######################################################################
+override_dh_auto_configure:
+	# -c check without execution, -w warn
+	perl -cw sgml-catalog-check.pl
+
+#######################################################################
+override_dh_install:
+	dh_install -X/catalog
+	# skip */catalog and */catalog.xml files 
+	# but do not skip sgml-catalog-check.pl
+
+#######################################################################
+override_dh_installcatalogs:
+	# assert if destination free
+	if [ -f $(sgmldir)/dtd/rdf.dtd ]; then exit; fi
+	dh_installcatalogs
+	# assert if destination free
+	if [ -f $(xmldir)/declaration/xml.dcl ]; then exit; fi
+	dh_installxmlcatalogs
+
+#######################################################################
+override_dh_link:
+	dh_link
+#	 create all the nice links as specified in SGML FS Guidelines
+#	 (No more CVS/ in subdirectory)
+	set -e; cd sgml; for file in `find . -name catalog -o -name '*.soc'`; do	\
+	    echo "checking sgml/$$file"							;\
+	    ../sgml-catalog-check.pl -v 0 -d ../$(sgmldir) $$file		;\
+	done
+#	 UNSURE: do the same for XML stuff? (original comment before Osamu)
+
+#######################################################################
+override_dh_lintian:
+	dh_lintian
+#	 check for bad links but do not stop
+	for LINK in $$(find $(prefix) -type l); do \
+		TARGET=$$(readlink $$LINK); \
+		[ "$$TARGET" != "$${TARGET#/etc}" ] || [ -e $$LINK ] \
+		|| echo "dangling symlink: $$LINK -> $$TARGET"; \
+	done
+
