@@ -1,0 +1,437 @@
+<?xml version="1.0"?>
+<!DOCTYPE faq PUBLIC "+//IDN faq.org//DTD Frequently Asked Questions//EN//XML"
+                     "http://xml.ascc.net/xml/resource/qaml-xml.dtd">
+<?xml-stylesheet type="text/css" href="qaml.css" ?>
+<faq >
+  <head>
+     <title>
+     The QAML FAQ
+    </title>
+    <maintain><name>Rick Jelliffe</name>
+        <email>ricko@gate.sinica.edu.tw</email>
+        </maintain>
+    <hdr>
+       <type>Programming</type>
+       <content>FAQ, QAML, Frequently Asked Question,
+      Question and Answer Markup Language,
+       XML, SGML </content>
+    </hdr>
+    <archive href="http://www.ascc.net/xml/en/utf-8/camel-faq.xml"/>
+  </head>
+  <body  xml:lang="en">
+  <section>
+    <logo href="../../graphics/xml.gif" 
+         alt="The XML Logo (from the XML FAQ)" />
+    <title>
+      The QAML F.A.Q.
+    </title>
+    <p>
+      This FAQ is about QAML, a markup language for internet FAQs.
+      </p>
+      <p>QAML is the Question and Answer Markup Language.</p>
+    </section>
+    <section>
+    <title>
+      A. General
+    </title>
+  
+<qna id='a1'><q class='h2' >
+      A.1. What is a FAQ?
+    </q><author>
+                <name>Rick Jelliffe</name>
+                <email>ricko@gate.sinica.edu.tw</email>
+        </author> <a>
+    <p> A FAQ is the nickname for a "Frequently Asked Questions"
+    document. There are thousands of FAQs available on the World Wide Web
+    on many different topics. The basic format of a FAQ is that someone
+    asks a question, and someone else answers.
+    </p>
+    <p>FAQs were very popular on specialist bulletin boards, mailing lists
+    and USENET newsgroups. On these discussion forums, the same questions
+    appear repeatedly: newbies ask the same questions and new approaches to 
+    solving problems get developed. These questions and answers are collected
+    into FAQs; newbies can be directed to the FAQs for good answers, 
+    and the FAQs can get updated. </p>
+    <p>In several cases, FAQs are ultimately 
+    revised into book form and published in paper: 
+    <span class="i">The SGML FAQBook</span> by Steve DeRose and
+    <span class="i">Chinese Japanese Korean Vietnamese Information Processing</span>
+    by Ken Lunde are both examples of FAQs in book form.
+    </p>
+    <p>You can find a good collection of FAQs at the web site of 
+    <span class="tt">faq.org</span>
+    (<link href="http://www.faq.org">http://www.faq.org/</link>).
+    </p>  
+    </a>
+</qna>    
+<qna id='a2'><q class='h2' >
+      A.2. What is a Markup Language?
+    </q><author>
+                <name>Rick Jelliffe</name>
+                <email>ricko@gate.sinica.edu.tw</email>
+        </author> <a>
+    <p>A markup language lets you name the various elements in your text:
+    HTML is the most famous markup language. You just insert special
+    codes called <span class="i">tags</span> into your text; these tags
+    tell you where each interesting element starts or finishes.
+    </p>
+    <p>The term markup was coined by Dr Charles Goldfarb at IBM in the
+    early 1970s. Goldfarb invented SGML, the Standard Generalized Markup
+    Language (Internation Standard 8879:1986) which is now becoming 
+    available over the WWW as XML, the Extensible Markup Language.
+    </p>  
+    </a>
+</qna>
+<qna id='a3'><q class='h2' >
+      A.3. What is QAML?
+    </q><author>
+                <name>Rick Jelliffe</name>
+                <email>ricko@gate.sinica.edu.tw</email>
+        </author> <a>
+    <p>QAML is a markup language created specially to help write,
+    use and maintain FAQs. It is smaller and simpler than HTML.
+    </p>
+    <p>A QAML document has a very simple structure: it has a
+    <span class="tt">head</span> and a 
+    <span class="tt">body</span>. The body is made up of
+    <span class="tt">qna</span> elements, each of which has a
+    <span class="tt">q</span> question and 
+    <span class="tt">a</span> answer. 
+    </p>
+    <p>Because the questions and answers are clearly marked up
+    by tags, it makes life a lot easier for people to write 
+    programs to manipulate the FAQ: to automatically generate
+    indexes of questions, to make global changes to stylesheets,
+    or to split the questions and answers into different pages.
+    </p>  
+    </a>
+</qna>
+<qna id='a4'><q class='h2' >
+      A.4. Who wrote QAML?
+    </q><author>
+                <name>Rick Jelliffe</name>
+                <email>ricko@gate.sinica.edu.tw</email>
+        </author> <a>
+    <p>QAML version 1.0 was written by Justin Higgens, of
+    faq.org. Email <link href="mailto:jhiggins@dn.net">jhiggins@dn.net</link>.
+    This version used SGML, and so is very lenient on tagging errors.
+    </p>
+    <p>QAML version 2.0 uses XML, and so you need to be more careful with
+    providing all the tags needed for a well-formed XML document.                                                               
+    It has very full support for the latest World Wide Web Consortium
+    specifications (see <link href="http://www.w3.org">http://www.w3.org</link>).
+    It was written by Rick Jelliffe, of the Academia Sinica Computing Center,
+    Taipei, Taiwan.
+    </p>  
+    </a>
+</qna>
+                    
+                    
+<qna id='a5'><q class='h2' >
+      A.5. Why not just use HTML?
+    </q><author>
+                <name>Rick Jelliffe</name>
+                <email>ricko@gate.sinica.edu.tw</email>
+        </author> <a>
+    <p>HTML is much more complicated and richer than QAML.
+    However, HTML allows you to create documents which look
+    pretty but which do not have the tagging needed to create
+    indexes or to convert the data to different forms: it
+    gives you too much!
+    </p>
+    <p>FAQ documents can be accessed from all sorts of systems,
+    not only visual web browsers. So QAML does not provide
+    the types of elements which cannot be seen on many different
+    media: telnet terminals, Braille readers, speech synthesizers,
+    mobile phones, etc.
+    </p>
+    <p>However, it is very easy to convert QAML to HTML. There
+    are XSL stylesheets available to do this.  So you can write
+    your FAQ in QAML, but deliver it in HTML.
+    </p>  
+    </a>
+</qna>
+                    
+
+
+</section>
+    <section>
+    <title>
+      B. About Writing QAML Documents
+    </title>
+  <qna id='b1'><q class='h2' >
+      B.1. How can I write a QAML document?
+    </q><author>
+                <name>Rick Jelliffe</name>
+                <email>ricko@gate.sinica.edu.tw</email>
+        </author> <a>
+    <p>You can use any text editor, or SGML or HTML editor.
+    The NotePad or WordPad applications allow it. You can
+    use most word processors (but remember to save the 
+    document as "Text".  You can even use a WYSIWYG HTML editor
+    to create the FAQ, and then use a text editor to alter
+    the element type names and attributes as appropriate.
+    </p>
+    <p>There is also an OmniMark script available which does
+    automates much of the HTML-to-QAML conversion work.
+    </p>
+    <p>QAML Structure</p>
+    <p>A QAML document has a very simple structure: it has a
+    <span class="tt">head</span> and a 
+    <span class="tt">body</span>. 
+    </p>
+    <p>The head has to have some 
+    <span class="i">metadata</span>
+    which gives the title, the maintainers name and email contact
+    address, the official archive site for the FAQ, and 
+    keywords which can be given to a search robot.
+    </p>
+    <p>The body is made up of
+    <span class="tt">qna</span> elements, each of which has a
+    <span class="tt">q</span> question and 
+    <span class="tt">a</span> answer. 
+    These qna elements can be collected into sections, and 
+    given general section titles.
+    </p>
+    <p>Within each answer, you can have <span class="tt">p</span>
+    paragraph elements. The only element types allowed inside
+    a paragraph are <span class="tt">link</span> and
+    <span class="tt">span</span>. 
+    </p>
+    <div class="ul">
+    <p class="li">A link acts like a hypertext
+    link in HTML: if you are using a hypertext browser, you
+    should be able to click on it, and go to the location specified.
+    If you are not using a hypertext browser, the link may only
+    appear in a different color. (E.g., at the moment the CSS stylesheets
+    for QAML do not support hypertext.)
+    </p>
+    <p class="li">The span element acts like its HTML inspiration.
+    It lets you mark up a range of text inside a paragraph. You give
+    it a class attribute to signify what its meaning is. Typically
+    this will be used to select some font variation, such a bolding.
+    However, please remember to write your FAQ so that it still makes
+    sense to someone who is not using a big color screen and a fancy 
+    web browser: use the formatting to 
+    <span class="i">assist</span> the meaning of the text
+    not to <span class="i">convey</span> it.
+    </p>
+    </div>
+    </a>     
+    
+</qna>
+<qna id='b2'><q class='h2' >
+      B.2. What stylesheets are available for QAML?
+    </q><author>
+                <name>Rick Jelliffe</name>
+                <email>ricko@gate.sinica.edu.tw</email>
+        </author> <a>
+    <p>There is a default stylesheet available from
+    Academia Sinica Computing Centre's Chinese XML Now!
+    project, at 
+    <link href="http://www.ascc.net/xml/en/utf-8/resource-index.html">
+    http://www.ascc.net/xml/en/utf-8/resource-index.html</link>
+    </p>
+    </a>
+</qna>
+<qna id='b3'><q class='h2' >
+      B.3. How can I make a hypertext link?
+    </q><author>
+                <name>Rick Jelliffe</name>
+                <email>ricko@gate.sinica.edu.tw</email>
+        </author> <a>
+    <p>The link element has an attribute called href. 
+    Just put in the URL of the resource that is the
+    link's target.
+    </p>
+    <p>Remember that the data inside the link should also
+    contain the URL. This is because some people may
+    read the FAQ from a paper printout. Don't forget them!
+    </p>
+    <p>An example follows.</p>
+    <p class="pre">
+    &lt;p&gt;This is &lt;link href="qaml-faq.xml"&gt;qaml-faq.xml&lt;/link&gt;&lt;/p&gt;
+    </p>
+    <p>(Some WWW browsers may display that example wrong, so another
+    version of the same thing follows: the one with the angle brackets is
+    the correct one.)</p>
+    <p class="pre">
+    <![CDATA[<p>This is <link href="qaml-faq.xml">qaml-faq.xml</link></p>]]>
+    </p>
+    </a>
+</qna>
+</section>
+    <section>
+    <title>
+      C. Processing QAML documents
+    </title>
+  
+<qna id='c1'><q class='h2' >
+      C.1. What can I use QAML documents for?
+    </q><author>
+                <name>Rick Jelliffe</name>
+                <email>ricko@gate.sinica.edu.tw</email>
+        </author> <a>
+    <p>
+    </p>
+    
+    </a>
+</qna>
+<qna id='c2'><q class='h2' >
+      C.2. What are text processing languages?
+    </q><author>
+                <name>Rick Jelliffe</name>
+                <email>ricko@gate.sinica.edu.tw</email>
+        </author> <a>
+    <p>
+    </p>
+    
+    </a>
+</qna>
+    
+    
+</section>
+    <section>
+    <title>
+      D. QAML and Standards
+    </title>
+    
+    
+<qna id='d1'><q class='h2' >
+      D.1. Are Standards Useful?
+    </q><author>
+                <name>Rick Jelliffe</name>
+                <email>ricko@gate.sinica.edu.tw</email>
+        </author> <a>
+    <p>Standards are very useful, because they allow
+    us to build amazing things co-operatively.
+    </p>
+    <p>But a standard is usually general purpose,
+    and a general-purpose tool is usually sub-optimal
+    than a custom-made, specific-purpose tool.
+    So  QAML is better for representing FAQs than
+    HTML, but your own markup language will be even
+    better for marking up <span class="b">your</span>
+    own FAQ.</p>
+    <p>But if you make your own markup language,
+    you have to also then write all your own computer
+    tools to use it. However, QAML is very simple, so
+    even if you do have your own markup language for
+    FAQs, you may find it is not difficult to export
+    your information into QAML format, so that you can
+    use any QAML tools. Or you may find you can convert
+    QAML tools for your requirements too!
+    </p>                 
+    </a>
+</qna>
+
+    
+<qna id='d2'><q class='h2' >
+      D.2. What is XML??
+    </q><author>
+                <name>Rick Jelliffe</name>
+                <email>ricko@gate.sinica.edu.tw</email>
+        </author> <a>
+    <p>XML is the Extensible Markup Language. It is a
+    simple syntax for constructing markup languages to
+    exchange data over the WWW. QAML 2.0 documents are
+    XML documents. (And XML documents are SGML documents.)
+    </p>
+    <p>See <link href="http://www.w3.org/">http://www.w3.org/</link>
+    for more details.</p>
+    </a>
+</qna>
+
+    
+<qna id='d2a'><q class='h2' >
+      D.2a. What is I18n??
+    </q><author>
+                <name>Rick Jelliffe</name>
+                <email>ricko@gate.sinica.edu.tw</email>
+        </author> <a>
+    <p>I18n is the contraction used to mean "internationalization",
+    because there are 18 letters missing.</p>
+    <p>I18n means the features available to allow documents
+    in different languages, perhaps even within the same document.
+    </p>
+    <p>QAML 2.0 is highly internationalized, following WWW best practise. 
+    (One of QAML 2.0's authors is a member of the World Wide Web Consortium's
+    I18n Interest Group, and proposed most of the i18n features of XML.)
+    It currently does not have support for bi-directional text; this
+    can be added on request. 
+    </p>
+    <p>QAML 2.0 documents can use any standard character encoding, and all
+    elements can have an attribute <span class="tt">xml:lang</span>
+    to give the language being used.
+    </p>
+    </a>
+</qna>
+
+<qna id='d3'><q class='h2' >
+      D.3. What is Accessability??
+    </q><author>
+                <name>Rick Jelliffe</name>
+                <email>ricko@gate.sinica.edu.tw</email>
+        </author> <a>
+    <p>Accessability means that the document can be read by people
+    on unusual mediums or formats: large magnifaction screens,
+    speech synthesizers, Braille readers and so on.
+    </p>
+    <p>QAML has been written following the World Wide Web Consortium
+    guidelines in this area: elements with vision-dependencies have
+    kept out, and logo images must have alternative forms.
+    </p>
+    </a>
+</qna>
+
+<qna id='d4'><q class='h2' >
+      D.4. What is Dublin Core?
+    </q><author>
+                <name>Rick Jelliffe</name>
+                <email>ricko@gate.sinica.edu.tw</email>
+        </author> <a>
+    <p>The Dublin Core is a basic set of 13 elements which 
+    various experts have decided are a minimum useful list
+    for capturing basic metadata about small documents on
+    the Web. This metadata allows searching by users and
+    rudamentary classification by librarians. 
+    </p>
+    <p>The QAML DTD (Document Type Definition) shows the
+    mappings to the various Dublin Core elements. Also, we
+    encourage the use of a final section, with class <span
+    class="tt">dc</span>, with explicit markup of the 
+    Dublin Core elements. This assists users of printed
+    versions of your FAQ.
+    </p>
+    <p>For more information on Dublin Core, there is a
+    small QAML FAQ on Metadata at
+    <link href="http://www.ascc.net/xml/en/utf-8/dc-fq.xml">
+    http://www.ascc.net/xml/en/utf-8/dc-fq.xml</link>.
+    </p>
+    </a>
+</qna>
+</section>
+    <section class="dc">
+    <title>
+      Cataloging Information (Dublin Core)
+    </title>
+<p class='pre'  xml:space='preserve' >
+&lt;DC:TITLE       xml:lang="en"&gt;The QAML FAQ &lt;/DC:TITLE&gt;
+&lt;DC:CREATOR                  &gt;Rick Jelliffe &lt;/DC:CREATOR&gt;
+&lt;DC:SUBJECT     xml:lang="en"&gt;FAQ, QAML, Frequently Asked Question,
+      Question and Answer Markup Language, XML, SGML 
+                              &lt;/DC:SUBJECT&gt;
+&lt;DC:DESCRIPTION xml:lang="en"&gt;Frequently Asked Questions about using QAML, 
+                              the Question and Answer Markup Language &lt;/DC:DESCRIPTION&gt;
+&lt;DC:PUBLISHER   xml:lang="en"&gt;Computing Centre, Academia Sinica, Taiwan &lt;/DC:PUBLISHER&gt;
+&lt;DC:TYPE        xml:lang="en"&gt;Text.Article &lt;/DC:TYPE&gt;
+&lt;DC:DATE                     &gt;1999-04-06 &lt;/DC:DATE&gt;
+&lt;DC:RIGHTS                   &gt;<link href= 
+"http://www.ascc.net/xml/en/utf-8/legal.html">
+http://www.ascc.net/xml/en/utf-8/legal.html</link >
+&lt;/DC:RIGHTS&gt;
+</p>
+</section>
+  </body>
+</faq>
+
